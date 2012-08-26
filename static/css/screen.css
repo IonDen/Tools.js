@@ -102,6 +102,12 @@
     font-weight: normal;
     color: #3400a2;
 }
+.button.small {
+    padding: 5px 10px 10px;
+}
+.button.small:active {
+    padding-bottom: 6px;
+}
 
 
 /* =====================================================================================================================
@@ -157,7 +163,7 @@
     background: rgba(0,0,0,0.3); margin: 10px -20px 15px;
 }
 .content .title h1 {margin: 0;}
-.content .title .button {display: block; position: absolute; top: 14px; right: 20px;}
+.content .title .rb {position: absolute; top: 13px; right: 20px;}
 .content .title small {font-size: 12px; margin: 0 0 0 10px; color: #ccc;}
 .content p {font-family: Verdana, Arial, Helvetica, sans-serif; margin: 10px 0 15px;}
 .content p small {font-size: 11px; line-height: 15px; opacity: 0.5; font-family: Arial, Helvetica, sans-serif;}
