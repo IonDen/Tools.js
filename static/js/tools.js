@@ -90,6 +90,4 @@ tools.loadComponents = function(target, isContext){
     tools.mobile(); // it is now boolean
     tools.fuck.init();
 
-    console.log(tools.fuck.check("Потреблять, нахуй блять"));
-
 };
