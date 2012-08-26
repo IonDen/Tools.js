@@ -5,3 +5,15 @@
 // http://ionden.com/tools/
 // ===================================================================================================================*/
 
+#mw {
+    position: relative; margin: 0 auto;
+    width: 860px; min-height: 500px;
+    padding: 20px;
+    background: #1c1f34;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA9JREFUeNpiYmBgmAkQYAAAqACchXtpgwAAAABJRU5ErkJggg==);
+    background: rgba(0,0,0,0.5); border-radius: 3px; text-shadow: 1px 1px 0 #000;
+}
+.sp {
+    position: relative;
+    height: 20px;
+}

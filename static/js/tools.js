@@ -38,8 +38,8 @@ tools.mobile = function(){
 // =====================================================================================================================
 // Launch code
 
-$(document).ready(function(){
+tools.loadComponents = function(){
 
     tools.mobile(); // it is now boolean
 
-});
+};

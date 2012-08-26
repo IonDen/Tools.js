@@ -1,7 +1,8 @@
-﻿// Tools.js support script
-// Engine.js
-// version 1.0.1
-// by Denis Ineshin || denis.ineshin@gmail.com || IonDen.com
+﻿// Engine.js
+// Tools.js support script
+// version 1.0.2
+// Copyright 2012, Denis Ineshin
+// http://ionden.com/tools/
 // =====================================================================================================================
 
 var test = test || {};
@@ -16,7 +17,7 @@ var test = test || {};
 // Launch code
 
 $(document).ready(function(){
-    // launch on DOM ready
-
+    // launch tools.js on DOM ready
+    tools.loadComponents();
 
 });
