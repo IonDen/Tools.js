@@ -11,4 +11,4 @@ Free jQuery tools for websites
 
 
 ## Компоненты
-* tools.mobile
+* tools.mobile - определяет мобильные браузеры
