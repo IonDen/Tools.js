@@ -1,5 +1,5 @@
 ﻿// Tools.js
-// version 1.0.55
+// version 1.0.56
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // Released under the MIT license.
@@ -38,7 +38,7 @@ tools.mobile = function(){
 // =====================================================================================================================
 // Launch code
 
-tools.loadComponents = function(){
+tools.loadComponents = function(target, isContext){
 
     tools.mobile(); // it is now boolean
 

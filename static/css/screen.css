@@ -190,3 +190,12 @@
     -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.9), inset 1px 1px 1px rgba(255,255,255,0.3);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.9), inset 1px 1px 1px rgba(255,255,255,0.3);
 }
+
+
+/* =====================================================================================================================
+// Demos */
+
+.demo {height: 42px;}
+.demo .button {display: block; float: left; margin-right: 10px;}
+.demo .loader {float: left; width: 30px; height: 30px; background: url(../img/preloader.gif) no-repeat; display: none;}
+.demo .result {float: left; margin: 5px 0 0 5px; display: none;}

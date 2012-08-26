@@ -12,3 +12,6 @@ Free jQuery tools for websites
 
 ## Компоненты
 * tools.mobile - определяет мобильные браузеры
+
+## tools.mobile
+<p>Булева переменная <code>tools.mobile</code> возвращает значение <code>true</code>, если страниц открыта мобильным браузером (вроде Safari на iPhone и т.п.)</p>
