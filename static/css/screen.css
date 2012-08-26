@@ -1,9 +1,12 @@
 /* Tools.js website
 // screen.css
-// version 1.0, rev: 1
+// version 1.0.3
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // ===================================================================================================================*/
+
+/* =====================================================================================================================
+// Core styles */
 
 #mw {
     position: relative; margin: 0 auto;
@@ -17,3 +20,58 @@
     position: relative;
     height: 20px;
 }
+
+.line {
+    position: relative;
+    width: 900px; height: 4px;
+    margin: 0 -20px;
+    background: #ccc;
+    box-shadow: 1px 1px 4px #000;
+}
+    .line div {
+        position: absolute;
+        top: 0; left: -10px;
+        width: 900px; height: 0;
+        border: 10px solid transparent;
+        border-top: 5px solid #333;
+    }
+    .line span {
+        position: absolute; display: block;
+        top: -5px; left: -10px;
+        width: 920px; height: 5px;
+        background: #ccc;
+        background-image: -moz-linear-gradient(#ffffff, #999999);
+        background-image: -ms-linear-gradient(#ffffff, #999999);
+        background-image: -webkit-linear-gradient(#ffffff, #999999);
+        background-image: -o-linear-gradient(#ffffff, #999999);
+        background-image: linear-gradient(#ffffff, #999999);
+    }
+
+
+/* =====================================================================================================================
+// Header */
+
+#header {
+    position: relative;
+    height: 75px;
+}
+    #header .logo {
+        font-size: 32px; line-height: 36px;
+        padding: 0 0 1px 40px;
+        background: url(../img/gear.png) no-repeat 0 3px;
+    }
+    #header .slogan {
+        position: absolute;
+        top: 38px; left: 42px;
+        font-size: 12px; line-height: 16px;
+    }
+    #header .version {
+        position: absolute;
+        top: 2px; left: 145px;
+        color: #ff0;
+        font-size: 12px; font-weight: bold;
+    }
+    #header .button {
+        display: block; position: absolute;
+        top: 10px; right: 0;
+    }
