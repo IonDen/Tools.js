@@ -1,5 +1,5 @@
 ﻿// Tools.js
-// version 1.0.57
+// version 1.0.58
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // Released under the MIT license.
@@ -34,14 +34,14 @@ tools.mobile = function(){
 
 
 // =====================================================================================================================
-// tools.fuck, rev: 7
+// tools.fuck, rev: 9
 
 tools.fuck = {
     init: function(){
         this.patterns = [
             /х(уй|уи|уе|уё|ую)/gi,
             /x(uy|ui|yi|yu|ye|ue)/gi,
-            /бля(ть|дь)|блеа(ть|дь)|блиа(ть|дь)|блия(ть|дь)|бл[яе](ди|до)|бля(?=(\s\S|$|\d))|\Sбля|бля\S/gi,
+            /(^|\s)бля(ть|дь)|(^|\s)блеа(ть|дь)|(^|\s)блиа(ть|дь)|(^|\s)блия(ть|дь)|(^|\s)бл[яе](ди|до)/gi,
             /bl(i|e|y|u)(a|at|yt)/gi,
             /п(и|е)(зд|сд|ст|зт)(о|ю|а|ец|у|и|я)/gi,
             /p[ie][zs]d(ec|a|u|y)/gi,
@@ -59,10 +59,21 @@ tools.fuck = {
             /fuck|bitch|asshole|dick/gi
         ];
     },
-    check: function(text){
+    check: function(text, bool){
         this.text = text;
+        var b = true;
+        if(bool == false) b = false;
+
         for(var i = 0; i < this.patterns.length; i++){
-            this.text = this.text.replace(this.patterns[i],"*");
+            this.text = this.text.replace(this.patterns[i], function(str){
+                var l = str.length;
+                if(!b) l = 1;
+                var r = "";
+                for(var i = 0; i < l; i++){
+                    r = r + "*";
+                }
+                return r;
+            });
         }
         return this.text;
     }
@@ -78,5 +89,7 @@ tools.loadComponents = function(target, isContext){
 
     tools.mobile(); // it is now boolean
     tools.fuck.init();
+
+    console.log(tools.fuck.check("Потреблять, нахуй блять"));
 
 };
