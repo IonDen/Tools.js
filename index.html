@@ -20,9 +20,11 @@
 <div id="mw">
     <div id="header">
         <div class="logo">tools.js</div>
-        <div class="slogan">удобная, модульная библиотека</div>
-        <div class="version">1.0.56 beta</div>
-        <a href="download/tools.zip" class="button">Скачать <b>tools.js</b></a>
+        <div class="slogan">удобная модульная библиотека</div>
+        <div class="version">1.0.59 beta</div>
+        <div class="rb">
+            <a href="download/tools.zip" class="button">Скачать <b>tools.js</b></a>
+        </div>
     </div>
 
     <div class="line"><div></div><span></span></div>
@@ -45,8 +47,11 @@
         <h2>Компоненты</h2>
         <ul>
             <li><a href="#mobile">tools.mobile</a> - определяет мобильные браузеры</li>
+            <li><a href="#fuck">tools.mobile</a> - фильтр мата</li>
         </ul>
     </div>
+
+    <!-- ---------------------------------------------- -->
 
     <div class="line"><div></div><span></span></div>
 
@@ -72,6 +77,37 @@
 
         <h2>Использование</h2>
         <p>Просто вызываем переменную <code>tools.mobile</code>. Её значение будет <code>true</code>, если у вас мобильный браузер.</p>
+    </div>
+
+    <!-- ---------------------------------------------- -->
+
+    <div class="line"><div></div><span></span></div>
+
+    <div class="content">
+        <div class="title">
+            <a name="fuck"></a><h1>tools.<b>fuck</b></h1>
+            <div class="rb">
+                <a href="download/tools.fuck.js" class="button small">Скачать отдельно <b>tools.fuck.js</b></a>
+            </div>
+        </div>
+
+        <h2>Возможности</h2>
+        <ul>
+            <li>Заменяет матершину на звездочки</li>
+            <li>Возможность заменять на звездочки каждую букву или слово целиком</li>
+        </ul>
+
+        <h2>Демо</h2>
+        <div class="demo_fuck">
+            <input type="text" class="inp" style="width: 700px;" id="fuck_input" />
+            <span class="button small" id="fuck_test">Проверим на мат</span>
+            <p><b>Результат проверки:</b></p>
+        </div>
+
+        <h2>Подключение</h2>
+
+        <p>Вызываем метод <code>tools.fuck.check(текст полный мата[, bool]);</code></p>
+        <p>Метод вернет текст, где матершинные слова будут заменены на звездочки.</p>
     </div>
 
 </div>

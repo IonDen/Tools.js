@@ -1,6 +1,6 @@
 ﻿// Engine.js
 // Tools.js support script
-// version 1.0.4
+// version 1.0.5
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // =====================================================================================================================
@@ -8,7 +8,7 @@
 var test = test || {};
 
 // =====================================================================================================================
-// Testing tools.js/mobile, rev: 1
+// Testing tools.mobile, rev: 1
 
 test.mobile = {
     init: function(){
@@ -22,6 +22,31 @@ test.mobile = {
 };
 
 
+// =====================================================================================================================
+// Testing tools.fuck, rev: 1
+
+test.fuck = {
+    init: function(){
+        var self = this;
+        this.text = "";
+
+        $("#fuck_test").on("click", function(){
+            self.text = $("#fuck_input").val();
+            self.show();
+        });
+        $("#fuck_input").on("keydown",function(e){
+            if(e.keyCode == 13){
+                self.text = $(this).val();
+                self.show();
+            }
+        });
+    },
+    show: function(){
+        var result = tools.fuck.check(this.text);
+        $("div.demo_fuck p").html("<b>Результат проверки:</b> " + result);
+    }
+};
+
 
 
 // =====================================================================================================================
@@ -33,4 +58,5 @@ $(document).ready(function(){
 
     // launch all other scripts
     test.mobile.init();
+    test.fuck.init();
 });
