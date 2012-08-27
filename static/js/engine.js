@@ -1,6 +1,6 @@
 ﻿// Engine.js
 // Tools.js support script
-// version 1.0.5
+// version 1.0.6
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // =====================================================================================================================
@@ -40,10 +40,25 @@ test.fuck = {
                 self.show();
             }
         });
+
+        $("#fuck_test_2").on("click", function(){
+            self.text = $("#fuck_input_2").val();
+            self.show2();
+        });
+        $("#fuck_input_2").on("keydown",function(e){
+            if(e.keyCode == 13){
+                self.text = $(this).val();
+                self.show2();
+            }
+        });
     },
     show: function(){
         var result = tools.fuck.check(this.text);
-        $("div.demo_fuck p").html("<b>Результат проверки:</b> " + result);
+        $("#demo_fuck_1 p").html("<b>Результат проверки:</b> " + result);
+    },
+    show2: function(){
+        var result = tools.fuck.check(this.text, "[Фак!]");
+        $("#demo_fuck_2 p").html("<b>Результат проверки:</b> " + result);
     }
 };
 

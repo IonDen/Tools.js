@@ -95,20 +95,27 @@
         <h2>Возможности</h2>
         <ul>
             <li>Заменяет матершину на звездочки</li>
-            <li>Возможность заменять на звездочки каждую букву или слово целиком</li>
+            <li>Возможность заменять на звездочки или на шаблон</li>
         </ul>
 
-        <h2>Демо</h2>
-        <div class="demo_fuck">
+        <h2>Демо c заменой на звездочки</h2>
+        <div class="demo_fuck" id="demo_fuck_1">
             <input type="text" class="inp" style="width: 700px;" id="fuck_input" />
             <span class="button small" id="fuck_test">Проверим на мат</span>
             <p><b>Результат проверки:</b></p>
         </div>
 
+        <h2>Демо с заменой на шаблон</h2>
+        <div class="demo_fuck" id="demo_fuck_2">
+            <input type="text" class="inp" style="width: 700px;" id="fuck_input_2" />
+            <span class="button small" id="fuck_test_2">Проверим на мат</span>
+            <p><b>Результат проверки:</b></p>
+        </div>
+
         <h2>Подключение</h2>
 
-        <p>Вызываем метод <code>tools.fuck.check(текст полный мата[, bool]);</code></p>
-        <p>Метод вернет текст, где матершинные слова будут заменены на звездочки.</p>
+        <p>Вызываем метод <code>tools.fuck.check(текст полный мата[, mask]);</code></p>
+        <p>Метод вернет текст, где матершинные слова будут заменены на звездочки. Необязательный аргумет mask принимает шаблон замены, например слово "[censored]"</p>
     </div>
 
 </div>

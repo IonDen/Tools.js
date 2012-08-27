@@ -34,7 +34,7 @@ tools.mobile = function(){
 
 
 // =====================================================================================================================
-// tools.fuck, rev: 12
+// tools.fuck, rev: 13
 
 tools.fuck = {
     init: function(){
@@ -64,11 +64,11 @@ tools.fuck = {
             /\Sбля/gi
         ];
     },
-    check: function(text, bool){
+    check: function(text, mask){
         var txt = text.split(" ");
 
         var many_stars = true;
-        if(bool == false) many_stars = false;
+        if(mask != undefined) many_stars = false;
 
         mainloop: for(var i = 0; i < txt.length; i++){
             for(var g = 0; g < this.ignore.length; g++){
@@ -77,11 +77,12 @@ tools.fuck = {
             for(var d = 0; d < this.patterns.length; d++){
                 txt[i] = txt[i].replace(this.patterns[d], function(str){
                     var stars_count = str.length;
+                    var pat = mask || "*";
                     if(!many_stars) stars_count = 1;
 
                     var result = "";
                     for(var e = 0; e < stars_count; e++){
-                        result += "*";
+                        result += pat;
                     }
 
                     return result;
