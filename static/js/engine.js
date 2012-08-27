@@ -8,7 +8,7 @@
 var test = test || {};
 
 // =====================================================================================================================
-// Testing tools.mobile, rev: 1
+// Testing tools.mobile, rev: 2
 
 test.mobile = {
     init: function(){
@@ -23,7 +23,7 @@ test.mobile = {
 
 
 // =====================================================================================================================
-// Testing tools.fuck, rev: 1
+// Testing tools.fuck, rev: 4
 
 test.fuck = {
     init: function(){
