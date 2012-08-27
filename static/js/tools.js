@@ -1,5 +1,5 @@
 ﻿// Tools.js
-// version 1.0.59
+// version 1.0.60
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // Released under the MIT license.
@@ -34,14 +34,14 @@ tools.mobile = function(){
 
 
 // =====================================================================================================================
-// tools.fuck, rev: 9
+// tools.fuck, rev: 11
 
 tools.fuck = {
     init: function(){
         this.patterns = [
             /х(уй|уи|уе|уё|ую)/gi,
             /x(uy|ui|yi|yu|ye|ue)/gi,
-            /(^|\s)бля(ть|дь)|(^|\s)блеа(ть|дь)|(^|\s)блиа(ть|дь)|(^|\s)блия(ть|дь)|(^|\s)бл[яе](ди|до)/gi,
+            /бля|бля(ть|дь)|блеа(ть|дь)|блиа(ть|дь)|блия(ть|дь)|бл[яе](ди|до)/gi,
             /bl(i|e|y|u)(a|at|yt)/gi,
             /п(и|е)(зд|сд|ст|зт)(о|ю|а|ец|у|и|я)/gi,
             /p[ie][zs]d(ec|a|u|y)/gi,
@@ -50,6 +50,7 @@ tools.fuck = {
             /(еб|ёб)(ал|ат|ис|ан|ла|уч|ок|ки|у(?=(\s|$|\d))|и(?=(\s|$|\d)))/gi,
             /eb\b|eb(al|at|is|it|la)/gi,
             /(еб(?=(\s|$|\d))|ёб(?=(\s|$|\d)))/gi,
+            /м[ао]нда|m[ao]nda/gi,
             /г[ао]ндон|муда[кч]|чмо|4мо/gi,
             /g[ao]ndon|muda[kc]|сhmo|4mo/gi,
             /пр[ао]шм[ао]ндовк(у|а|и)/gi,
@@ -58,24 +59,37 @@ tools.fuck = {
             /p[ie]d[ao]?r/gi,
             /fuck|bitch|asshole|dick/gi
         ];
+        this.ignore = [
+            /\Sблять/gi,
+            /\Sбля/gi
+        ];
     },
     check: function(text, bool){
-        this.text = text;
-        var b = true;
-        if(bool == false) b = false;
+        var txt = text.split(" ");
 
-        for(var i = 0; i < this.patterns.length; i++){
-            this.text = this.text.replace(this.patterns[i], function(str){
-                var l = str.length;
-                if(!b) l = 1;
-                var r = "";
-                for(var i = 0; i < l; i++){
-                    r = r + "*";
-                }
-                return r;
-            });
+        var many_stars = true;
+        if(bool == false) many_stars = false;
+
+        mainloop: for(var i = 0; i < txt.length; i++){
+            for(var g = 0; g < this.ignore.length; g++){
+                if(this.ignore[g].test(txt[i])) continue mainloop;
+            }
+            for(var d = 0; d < this.patterns.length; d++){
+                txt[i] = txt[i].replace(this.patterns[d], function(str){
+                    var stars_count = str.length;
+                    if(!many_stars) stars_count = 1;
+
+                    var result = "";
+                    for(var e = 0; e < stars_count; e++){
+                        result += "*";
+                    }
+
+                    return result;
+                });
+            }
         }
-        return this.text;
+
+        return txt.join(" ");
     }
 };
 
@@ -89,5 +103,7 @@ tools.loadComponents = function(target, isContext){
 
     tools.mobile(); // it is now boolean
     tools.fuck.init();
+
+    console.log(tools.fuck.check("Абляция употреблять потом сказать бля и блять"));
 
 };
