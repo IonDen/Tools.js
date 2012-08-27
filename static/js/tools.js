@@ -1,5 +1,5 @@
 ﻿// Tools.js
-// version 1.0.60
+// version 1.0.61
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // Released under the MIT license.
@@ -34,7 +34,7 @@ tools.mobile = function(){
 
 
 // =====================================================================================================================
-// tools.fuck, rev: 11
+// tools.fuck, rev: 12
 
 tools.fuck = {
     init: function(){
@@ -99,11 +99,9 @@ tools.fuck = {
 // =====================================================================================================================
 // Launch code
 
-tools.loadComponents = function(target, isContext){
+tools.loadComponents = function(context){
 
     tools.mobile(); // it is now boolean
     tools.fuck.init();
-
-    console.log(tools.fuck.check("Абляция употреблять потом сказать бля и блять"));
 
 };
