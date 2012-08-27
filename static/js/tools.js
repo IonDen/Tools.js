@@ -60,6 +60,7 @@ tools.fuck = {
             /fuck|bitch|asshole|dick/gi
         ];
         this.ignore = [
+            /блях\S/gi,
             /\Sблять/gi,
             /\Sбля/gi
         ];
