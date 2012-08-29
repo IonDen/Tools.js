@@ -1,5 +1,5 @@
 # Tools.js
-Free jQuery tools for websites
+Free jQuery tools for websites. <a href="http://ionden.com/tools/">Страница проекта</a>
 
 ## Возможности
 * Работает на jQuery 1.7+
@@ -7,7 +7,7 @@ Free jQuery tools for websites
 * Модульность, можно подключать компоненты на выбор
 * Легкое подключение и использование
 * Кроссбраузерность. IE 7.0+ и все современные браузеры.
-* Лицензия MIT
+* <a href="http://ionden.com/tools/license.html">Лицензия MIT</a>
 
 
 ## Компоненты
