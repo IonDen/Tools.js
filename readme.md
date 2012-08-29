@@ -15,7 +15,9 @@ Free jQuery tools for websites
 * tools.fuck - фильтр мата
 
 ## Tools.mobile
-* Булева переменная <code>tools.mobile</code> возвращает значение <code>true</code>, если страница открыта мобильным браузером (вроде Safari на iPhone и т.п.)
+* содержит 2 переменные: <code>check</code> и <code>browser</code>
+* tools.mobile.check - вернет <code>true</code>, если вы открыли страницу мобильным браузером (вроде Safari на iPhone и т.п.)
+* tools.mobile.browser - вернет название мобильного устройства/браузера
 
 ## Tools.fuck
 * Метод <code>tools.fuck.check(текст[, mask])</code> определяет матершину в словах и возвращает текст, где все матные слова заменены на звездочки

@@ -1,5 +1,5 @@
 ﻿// Tools.js
-// version 1.0.61
+// version 1.0.63
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // Released under the MIT license.
@@ -9,27 +9,23 @@
 var tools = tools || {};
 
 // =====================================================================================================================
-// tools.mobile, rev: 5
+// tools.mobile, rev: 7
 
-tools.mobile = function(){
-    var n = navigator.userAgent;
-    var devices = [
-        /Android/i,
-        /iPhone/i,
-        /iPod/i,
-        /iPad/i,
-        /BlackBerry/i,
-        /PlayBook/i,
-        /Windows Phone/i
-    ];
-
-    var result = false;
-    for(var i = 0; i < devices.length; i++){
-        result = devices[i].test(n);
-        if(result) break;
-    }
-    tools.mobile = result;
-    return result;
+tools.mobile = {
+    init: function(){
+        var n = navigator.userAgent;
+        var devices = /iPhone|iPod|iPad|Android|BlackBerry|PlayBook|Windows Phone/gi;
+        if(n.match(devices)){
+            this.check = true;
+            this.browser = n.match(devices)[0];
+        }
+        if(Object.prototype.toString.call(window.operamini) === "[object OperaMini]"){
+            this.check = true;
+            this.browser = "OperaMini";
+        }
+    },
+    check: false,
+    browser: undefined
 };
 
 
@@ -103,7 +99,7 @@ tools.fuck = {
 
 tools.loadComponents = function(context){
 
-    tools.mobile(); // it is now boolean
+    tools.mobile.init();
     tools.fuck.init();
 
 };

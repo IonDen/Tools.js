@@ -188,6 +188,10 @@
 .content ul {margin: 10px 0 15px;}
 .content li {display: inline-block; *display: inline; zoom: 1; width: 44%; vertical-align: top; padding: 0 20px 10px 20px; background: url(../img/li.png) no-repeat 0 1px;}
 .content li b {font-weight: normal; color: #f00;}
+.content ul.normal li {
+    display: block; *display: block;
+    width: auto;
+}
 .content p b {font-weight: normal; color: #11d72e;}
 .content p abbr {display: inline-block; cursor: help; border-bottom: 1px dotted #f00;}
 .content code {

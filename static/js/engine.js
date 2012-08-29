@@ -1,6 +1,6 @@
 ﻿// Engine.js
 // Tools.js support script
-// version 1.0.6
+// version 1.0.8
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // =====================================================================================================================
@@ -8,14 +8,17 @@
 var test = test || {};
 
 // =====================================================================================================================
-// Testing tools.mobile, rev: 2
+// Testing tools.mobile, rev: 4
 
 test.mobile = {
     init: function(){
         $("#mobile_test").on("click", function(){
             var browser = "";
-            if(tools.mobile) browser = "<code>true</code> У вас мобильный браузер";
+            if(tools.mobile.check){
+                browser = "<code>true</code> У вас мобильный браузер. Название: <b>" + tools.mobile.browser + "</b>";
+            }
             else browser = "<code>false</code> У вас десктопный браузер";
+
             $("#mobile_demo > div.result").html("Результат проверки: " + browser).show();
         })
     }
