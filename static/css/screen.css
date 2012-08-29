@@ -1,6 +1,6 @@
 /* Tools.js website
 // screen.css
-// version 1.0.3
+// version 1.0.5
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // ===================================================================================================================*/
@@ -222,7 +222,7 @@
 .demo .loader {float: left; width: 30px; height: 30px; background: url(../img/preloader.gif) no-repeat; display: none;}
 .demo .result {float: left; margin: 5px 0 0 5px; display: none;}
 
-.demo_fuck {height: 65px; position: relative;}
+.demo_fuck {height: 85px; position: relative;}
 .demo_fuck p {position: absolute; top: 30px; left: 0;}
 .demo_fuck .inp {float: left; margin: 4px 10px 0 0;}
 .demo_fuck .button {float: right; display: block;}
