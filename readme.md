@@ -15,6 +15,8 @@ Free jQuery tools for websites. <a href="http://ionden.com/tools/">Страни�
 * tools.fuck - фильтр мата
 * tools.pattern - проверяет тип полей на соответствие
 
+***
+
 ## Tools.mobile
 * <a href="http://ionden.com/tools/#mobile">Демо</a>
 * содержит 2 переменные: <code>check</code> и <code>browser</code>
