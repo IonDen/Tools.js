@@ -21,7 +21,7 @@
     <div id="header">
         <div class="logo">tools.js</div>
         <div class="slogan">удобная модульная библиотека</div>
-        <div class="version">1.0.63 beta</div>
+        <div class="version">1.0.67 beta</div>
         <div class="rb">
             <a href="download/tools.zip" class="button">Скачать <b>tools.js</b></a>
         </div>
@@ -49,6 +49,7 @@
         <ul>
             <li><a href="#mobile">tools.mobile</a> - определяет мобильные браузеры</li>
             <li><a href="#fuck">tools.fuck</a> - фильтр мата</li>
+            <li><a href="#pattern">tools.pattern</a> - проверяет тип полей</li>
         </ul>
     </div>
 
@@ -134,7 +135,37 @@
             </div>
         </div>
 
-        test
+        <h2>Возможности</h2>
+        <ul>
+            <li>Проверяет тип полей на соответствие. Доступные типы:</li>
+            <li><b>text</b> - проверяет на отсутствие спец-символов, вроде <b>&gt;</b> и т.п.</li>
+            <li><b>email</b> - проверяет на соответствие текста формату адреса e-mail: <b>mail@mail.com</b></li>
+            <li><b>phone</b> - проверяет на соответствие текста формату записи телефона <b>+7(123)456-78-90</b></li>
+        </ul>
+
+        <h2>Демо</h2>
+        <div class="demo_pattern">
+            <input type="text" class="inp" data-type="text" />
+            <a href="#" class="button small blue">Тестируем текст</a>
+            <div class="error"></div>
+            <div class="success"></div>
+        </div>
+        <div class="demo_pattern">
+            <input type="text" class="inp" data-type="email" />
+            <a href="#" class="button small blue">Тестируем e-mail</a>
+            <div class="error"></div>
+            <div class="success"></div>
+        </div>
+        <div class="demo_pattern">
+            <input type="text" class="inp" data-type="phone" />
+            <a href="#" class="button small blue">Тестируем телефон</a>
+            <div class="error"></div>
+            <div class="success"></div>
+        </div>
+
+        <h2>Подключение</h2>
+
+        <p>Вызываем метод <code>tools.pattern.check(string, type);</code>. Где <code>string</code> - строка на проверку, а <code>type</code> - тип, соответствие которому вы проверяете.</p>
     </div>
 
 </div>

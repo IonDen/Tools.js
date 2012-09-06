@@ -226,3 +226,9 @@
 .demo_fuck p {position: absolute; top: 30px; left: 0;}
 .demo_fuck .inp {float: left; margin: 4px 10px 0 0;}
 .demo_fuck .button {float: right; display: block;}
+
+.demo_pattern {height: 40px;}
+.demo_pattern .inp {float: left; margin: 4px 10px 0 0;}
+.demo_pattern .button {float: left; display: block;}
+.demo_pattern .error {float: left; margin: 5px 0 0 10px; color: #f00; display: none;}
+.demo_pattern .success {float: left; margin: 5px 0 0 10px; color: #11d72e; display: none;}

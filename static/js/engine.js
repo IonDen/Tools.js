@@ -1,6 +1,6 @@
 ﻿// Engine.js
 // Tools.js support script
-// version 1.0.8
+// version 1.0.10
 // Copyright 2012, Denis Ineshin
 // http://ionden.com/tools/
 // =====================================================================================================================
@@ -66,6 +66,33 @@ test.fuck = {
 };
 
 
+// =====================================================================================================================
+// Testing tools.pattern, rev: 1
+
+test.pattern = function(elem){
+    this.elem = elem;
+};
+test.pattern.prototype = {
+    init: function(){
+        this.elem.on("click","a.button",function(e){
+            e.preventDefault();
+            var string = $(this).siblings("input").val();
+            if(!string) return;
+            var type = $(this).siblings("input").data("type");
+            var err = $(this).siblings("div.error");
+            var success = $(this).siblings("div.success");
+            var c = tools.pattern.check(string, type);
+            if(c) {
+                success.text("Текст прошел валидацию").show();
+                err.hide();
+            } else {
+                success.hide();
+                err.text("Текст не прошел валидацию").show();
+            }
+        });
+    }
+};
+
 
 // =====================================================================================================================
 // Launch code
@@ -77,4 +104,9 @@ $(document).ready(function(){
     // launch all other scripts
     test.mobile.init();
     test.fuck.init();
+
+    $("div.demo_pattern").each(function(i){
+        test["pattern_" + i] = new test.pattern($("div.demo_pattern").eq(i));
+        test["pattern_" + i].init();
+    });
 });

@@ -1,7 +1,10 @@
 ﻿// Tools.js
-// version 1.0.63
+// version 1.0.67
 // Copyright 2012, Denis Ineshin
-// http://ionden.com/tools/
+//
+// Project page:    http://ionden.com/tools/
+// GitHub page:     https://github.com/IonDen/Tools.js
+//
 // Released under the MIT license.
 // http://ionden.com/tools/license.htm
 // =====================================================================================================================
@@ -92,6 +95,24 @@ tools.fuck = {
 };
 
 
+// =====================================================================================================================
+// tools.pattern, rev: 8
+
+tools.pattern = {
+    init: function(){
+        this.patterns = {
+            text: /^[\s\w\u0400-\u04FF\?\!\@\#\$\%\^\&\*\,\;\.\+\[\]\{\}\-\—\(\)]*$|^$/,
+            phone: /^\s?\+?\d+\s?\({1}\d+\){1}\s?[\d\-]+\s?$/,
+            email: /^[\w\.]+\@\w+\.\w+$|^$/
+        }
+    },
+    check: function(string, type){
+        if(type && typeof type != "string") throw new Error("Pattern type should be string");
+        var current = this.patterns[type] || this.patterns.text;
+        return string.match(current);
+    }
+};
+
 
 
 // =====================================================================================================================
@@ -101,5 +122,6 @@ tools.loadComponents = function(context){
 
     tools.mobile.init();
     tools.fuck.init();
+    tools.pattern.init();
 
 };
