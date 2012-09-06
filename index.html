@@ -139,6 +139,7 @@
         <ul>
             <li>Проверяет тип полей на соответствие. Доступные типы:</li>
             <li><b>text</b> - проверяет на отсутствие спец-символов, вроде <b>&gt;</b> и т.п.</li>
+            <li><b>strict_text</b> - проверяет на отсутствие вообще всех спец-символов, кроме <b>-</b>. Нужен в основном чтобы исключить имена вроде <b>_-*Va$IA*-_</b></li>
             <li><b>email</b> - проверяет на соответствие текста формату адреса e-mail: <b>mail@mail.com</b></li>
             <li><b>phone</b> - проверяет на соответствие текста формату записи телефона <b>+7(123)456-78-90</b></li>
         </ul>
@@ -147,6 +148,12 @@
         <div class="demo_pattern">
             <input type="text" class="inp" data-type="text" />
             <a href="#" class="button small blue">Тестируем текст</a>
+            <div class="error"></div>
+            <div class="success"></div>
+        </div>
+        <div class="demo_pattern">
+            <input type="text" class="inp" data-type="strict_text" />
+            <a href="#" class="button small blue">Тестируем строгий текст</a>
             <div class="error"></div>
             <div class="success"></div>
         </div>

@@ -1,5 +1,5 @@
 ﻿// Tools.js
-// version 1.0.67
+// version 1.0.68
 // Copyright 2012, Denis Ineshin
 //
 // Project page:    http://ionden.com/tools/
@@ -96,12 +96,13 @@ tools.fuck = {
 
 
 // =====================================================================================================================
-// tools.pattern, rev: 8
+// tools.pattern, rev: 9
 
 tools.pattern = {
     init: function(){
         this.patterns = {
             text: /^[\s\w\u0400-\u04FF\?\!\@\#\$\%\^\&\*\,\;\.\+\[\]\{\}\-\—\(\)]*$|^$/,
+            strict_text: /^[\s\w\u0400-\u04FF\-]*$|^$/,
             phone: /^\s?\+?\d+\s?\({1}\d+\){1}\s?[\d\-]+\s?$/,
             email: /^[\w\.]+\@\w+\.\w+$|^$/
         }
